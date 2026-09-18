@@ -1,47 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Enter Meridian, a portfolio at the intersection of engineering, data, international trade and law.">
-  <meta name="theme-color" content="#f3eadc">
-  <title>Meridian | Welcome</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enter J.R's portfolio across software engineering, data, international trade and law.">
+  <meta name="theme-color" content="#eee4d3">
+  <title>J.R | Portfolio</title>
   <link rel="stylesheet" href="assets/css/intro.css">
 </head>
 <body>
-  <div class="surface" aria-hidden="true"></div>
-  <div class="top-rule" aria-hidden="true"></div>
+  <div class="ivory-surface" aria-hidden="true"></div>
 
-  <main class="stage" id="stage">
-    <div class="stage__meta" aria-hidden="true">
-      <span>Portfolio system / 2026</span>
-      <span>48.8566 N &nbsp; 02.3522 E</span>
-    </div>
-    <section class="stage__center" aria-labelledby="welcome-title">
-      <div class="meridian-mark" aria-hidden="true">
-        <span class="meridian-mark__ring"></span>
-        <span class="meridian-mark__axis"></span>
-        <span class="meridian-mark__latitude"></span>
-        <span class="meridian-mark__point"></span>
+  <main class="loader" id="loader">
+    <header class="loader__header">
+      <p class="wordmark">J.R / Portfolio</p>
+      <p>2026</p>
+    </header>
+
+    <section class="loader__center" aria-labelledby="loader-title">
+      <p class="loader__eyebrow">Software · Data · Trade · Law</p>
+
+      <button class="monogram" id="enter" type="button" aria-describedby="loader-instruction">
+        <span class="monogram__stage" aria-hidden="true">
+          <span class="monogram__echo monogram__echo--mist">J.R</span>
+          <span class="monogram__echo monogram__echo--gold">J.R</span>
+          <span class="monogram__echo monogram__echo--green">J.R</span>
+          <span class="monogram__base">J.R</span>
+          <span class="monogram__flare">J.R</span>
+        </span>
+        <span class="sr-only" id="loader-title">J.R portfolio</span>
+      </button>
+
+      <div class="loader__status">
+        <p id="loader-instruction">Enter portfolio</p>
+        <div class="progress" aria-hidden="true"><i></i></div>
+        <p class="progress-value" aria-hidden="true"><span id="progress-value">00</span> / 100</p>
       </div>
-      <h1 class="brand-name" id="welcome-title">Mer<em>i</em>dian</h1>
-      <p class="statement">Systems for a world without simple borders.</p>
-      <span class="divider" aria-hidden="true"></span>
-      <ul class="disciplines" aria-label="Portfolio disciplines">
-        <li>Engineering</li><li>Data</li><li>International trade</li><li>Law</li>
-      </ul>
-      <button class="enter" id="enter" type="button">Enter portfolio <span aria-hidden="true">&#8599;</span></button>
     </section>
-    <div class="stage__footer" aria-hidden="true">
-      <span>Research-led digital practice</span>
-      <div class="sequence-track"><i></i></div>
-      <span>EN / FR / UK</span>
-    </div>
+
+    <footer class="loader__footer">
+      <p>International perspective</p>
+      <p>EN / FR / UK</p>
+    </footer>
   </main>
 
-  <button class="skip" id="skip" type="button">Skip introduction</button>
-  <div class="transition-screen" id="transition" aria-live="polite"><span>Welcome.</span></div>
-  <noscript><p class="noscript">JavaScript is disabled. <a href="home.html">Enter the portfolio directly.</a></p></noscript>
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
+  <p class="sr-only" id="status" aria-live="polite">Select J.R to enter the portfolio.</p>
+  <noscript><p class="noscript">JavaScript is unavailable. <a href="home.html">Enter the portfolio</a>.</p></noscript>
   <script src="assets/js/intro.js"></script>
 </body>
 </html>
