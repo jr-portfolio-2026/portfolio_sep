@@ -256,11 +256,11 @@
   var visited = false;
   try { visited = localStorage.getItem(FIRST_VISIT_KEY) === '1'; } catch(e) {}
 
-  if (visited) {
-    flash.style.display = 'none';
-    home.classList.add('show');
-    return;
-  }
+ // if (visited) {
+ //   flash.style.display = 'none';
+ //   home.classList.add('show');
+ //   return;
+ //  }
 
   function setLang(i){
     langEls.forEach(function(el){
