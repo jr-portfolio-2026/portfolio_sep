@@ -50,7 +50,7 @@ export function PortfolioHome() {
       <div className="grain-overlay fixed" aria-hidden />
       <header className="fixed inset-x-0 top-0 z-40 border-b border-navy/5 bg-ivory/75 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between px-6 md:px-10">
-          <a href="#top" className="font-serif text-2xl text-relief" aria-label="Jade Rakoto, top">J.R</a>
+          <a href="#top" className="font-serif text-2xl text-relief" aria-label="X X, top">J.R</a>
           <nav className="hidden items-center gap-7 md:flex" aria-label="Primary navigation">
             {["Fields", "Work", "Method", "Context", "Contact"].map((item) => <a key={item} href={`#${item.toLowerCase()}`} className="meta-label opacity-60 transition-opacity hover:opacity-100">{item}</a>)}
           </nav>
@@ -66,7 +66,7 @@ export function PortfolioHome() {
             </div>
             <div className="grid items-end gap-12 lg:grid-cols-[1.2fr_.8fr]">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, ease }}>
-                <p className="meta-label mb-7 text-gold">Jade Rakoto</p>
+                <p className="meta-label mb-7 text-gold">X X</p>
                 <h1 className="max-w-5xl font-serif text-[clamp(3.4rem,7vw,7.25rem)] leading-[.92] font-light text-relief">
                   Law, commerce and <em className="font-normal text-navy">systems</em> for work across borders.
                 </h1>
