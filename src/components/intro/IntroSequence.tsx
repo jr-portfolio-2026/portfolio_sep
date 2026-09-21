@@ -29,6 +29,18 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
     return () => window.clearTimeout(t);
   }, []);
 
+  useEffect(() => {
+    if (phase !== "welcome") return;
+    const timer = window.setTimeout(() => {
+      if (step < WELCOMES.length - 1) {
+        setStep((currentStep) => currentStep + 1);
+      } else {
+        setPhase("loading");
+      }
+    }, 820);
+    return () => window.clearTimeout(timer);
+  }, [phase, step]);
+
   const advance = useCallback(() => {
     if (phase !== "welcome") return;
     setHintVisible(false);
@@ -50,7 +62,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [advance]);
 
-  const current = WELCOMES[step] ?? WELCOMES[0]!;
+  const current = WELCOMES[step] ?? { word: "Welcome.", lang: "EN" };
 
   return (
     <motion.div
@@ -60,7 +72,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
       tabIndex={0}
       aria-label="Continue"
       exit={{ opacity: 0, filter: "blur(12px)", scale: 1.02 }}
-      transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       style={{ cursor: phase === "welcome" ? "pointer" : "default" }}
     >
       <div className="grain-overlay" aria-hidden />
@@ -107,7 +119,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
               initial="initial"
               animate="animate"
               exit="exit"
-              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1
                 lang={current.lang.toLowerCase()}
@@ -130,7 +142,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
         animate={{ opacity: hintVisible && phase === "welcome" ? 0.55 : 0 }}
         transition={{ duration: 1.2 }}
       >
-        <span className="meta-label">Click to continue</span>
+        <span className="meta-label">Click to advance</span>
       </motion.div>
     </motion.div>
   );
