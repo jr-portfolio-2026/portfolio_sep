@@ -41,6 +41,10 @@
   --color-forest: var(--forest);
   --color-ivory: var(--ivory);
   --color-ivory-deep: var(--ivory-deep);
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-deep: var(--cobalt-deep);
+  --color-cobalt-foreground: var(--cobalt-foreground);
+
 
   --font-serif: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Manrope", "Helvetica Neue", sans-serif;
@@ -66,6 +70,10 @@
   --mist: oklch(0.87 0.03 210); /* #c8dce3 */
   --gold: oklch(0.64 0.085 80); /* #ab894b */
   --forest: oklch(0.33 0.045 170); /* #193c35 */
+  --cobalt: oklch(0.32 0.16 266); /* #002679 */
+  --cobalt-deep: oklch(0.22 0.12 265); /* #001442 */
+  --cobalt-foreground: oklch(0.96 0.012 230);
+
 
   --background: var(--ivory);
   --foreground: var(--navy-deep);
@@ -308,7 +316,52 @@
   }
 }
 
+/* Blue glass: inter-page transition, demos, wireframes, portrait frames */
+@utility page-transition {
+  background:
+    radial-gradient(ellipse at 25% 20%, oklch(0.42 0.17 262 / 85%), transparent 60%),
+    linear-gradient(140deg, var(--cobalt-deep), var(--cobalt) 55%, var(--cobalt-deep));
+  color: var(--cobalt-foreground);
+}
+
+@utility transition-glass {
+  border: 1px solid oklch(1 0 0 / 18%);
+  background: linear-gradient(120deg, oklch(1 0 0 / 3%), oklch(0.87 0.03 210 / 16%), oklch(1 0 0 / 3%));
+  backdrop-filter: blur(26px) saturate(130%);
+  filter: blur(2px);
+}
+
+@utility demo-stage {
+  background:
+    radial-gradient(ellipse at 80% 10%, oklch(0.45 0.16 262 / 70%), transparent 60%),
+    linear-gradient(150deg, var(--cobalt-deep), var(--cobalt));
+  color: var(--cobalt-foreground);
+  box-shadow: var(--shadow-paper);
+}
+
+@utility demo-glass {
+  border: 1px solid oklch(1 0 0 / 16%);
+  background: oklch(1 0 0 / 7%);
+  backdrop-filter: blur(22px) saturate(125%);
+  box-shadow: 0 30px 80px -40px oklch(0.15 0.1 265 / 80%);
+}
+
+@utility blue-portrait-frame {
+  border: 1px solid oklch(0.32 0.16 266 / 22%);
+  background: linear-gradient(140deg, var(--mist), var(--ivory-deep));
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 60%) inset,
+    0 30px 80px -44px oklch(0.22 0.12 265 / 60%);
+}
+
+@utility wireframe-sheet {
+  border: 1px solid oklch(0.32 0.16 266 / 18%);
+  background: linear-gradient(180deg, oklch(0.99 0.004 85), oklch(0.955 0.012 230));
+  box-shadow: 0 22px 60px -38px oklch(0.22 0.12 265 / 55%);
+}
+
 @layer base {
+
   * {
     border-color: var(--color-border);
   }
