@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { IntroSequence } from "@/components/intro/IntroSequence";
 import { PortfolioHome } from "@/components/home/PortfolioHome";
 
-const TITLE = "X X — Law, Trade & Digital Systems";
+const TITLE = "Jade Rakoto — Law, Trade & Digital Systems";
 const DESCRIPTION =
-  "Selected work by X X across international law, trade, business strategy, institutional practice, and applied digital tools.";
+  "Selected work by Jade Rakoto across international law, trade, business strategy, institutional practice, and applied digital tools.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,23 +38,23 @@ function Index() {
   };
 
   return (
-    <>
-      <AnimatePresence>
-        {showIntro !== false && (
-          <motion.div key="intro" exit={{ opacity: 0 }} transition={{ duration: 1.6 }}>
-            <IntroSequence onFinish={finish} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {showIntro === false && (
+    <div className="paper-surface relative min-h-screen">
+      {showIntro !== undefined && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+          animate={{ opacity: showIntro ? 0 : 1 }}
+          transition={{ duration: 0.7 }}
         >
           <PortfolioHome />
         </motion.div>
       )}
-    </>
+      <AnimatePresence>
+        {showIntro !== false && (
+          <motion.div className="fixed inset-0 z-50 bg-ivory" key="intro" exit={{ opacity: 0 }} transition={{ duration: 0.9 }}>
+            <IntroSequence onFinish={finish} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
