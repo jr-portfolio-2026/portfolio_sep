@@ -1,6 +1,7 @@
 # Portfolio Atelier
 
-Interactive portfolio for school and professional opportunities.
+An interactive portfolio for school, business and professional opportunities. 
+Welcome !
 
 ## Structure
 
@@ -20,4 +21,4 @@ Interactive portfolio for school and professional opportunities.
 
 ## Notes
 
-This folder is the clean upload package. It should be used for the new public GitHub repository, not the broader working folder.
+TBF
