@@ -37,7 +37,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
       } else {
         setPhase("loading");
       }
-    }, 820);
+    }, 1600);
     return () => window.clearTimeout(timer);
   }, [phase, step]);
 
@@ -119,7 +119,7 @@ export function IntroSequence({ onFinish }: { onFinish: () => void }) {
               initial="initial"
               animate="animate"
               exit="exit"
-              transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1
                 lang={current.lang.toLowerCase()}
