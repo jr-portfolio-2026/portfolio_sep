@@ -9,7 +9,7 @@ export const Route = createFileRoute("/work/$slug")({
   },
   head: ({ loaderData, params }) => {
     const project = loaderData ?? getProject(params.slug as ProjectSlug);
-    const title = `${project.name} — Project Study · Jade Rakoto`;
+    const title = `${project.name} — Project Study · Name Surname`;
     const description = `${project.mandate} Explore specifications, wireframes, and a controlled demonstration.`;
     return {
       meta: [
