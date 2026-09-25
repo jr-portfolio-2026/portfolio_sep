@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { IntroSequence } from "@/components/intro/IntroSequence";
 import { PortfolioHome } from "@/components/home/PortfolioHome";
 
-const TITLE = "Jade Rakoto — Law, Trade & Digital Systems";
+const TITLE = "Name Surname — Law, Trade & Digital Systems";
 const DESCRIPTION =
-  "Selected work by Jade Rakoto across international law, trade, business strategy, institutional practice, and applied digital tools.";
+  "Selected work by Name Surname across international law, trade, business strategy, institutional practice, and applied digital tools.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
